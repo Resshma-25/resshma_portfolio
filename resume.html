@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RESSHMA VP — Resume</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    :root {
+      --primary: #0f172a;
+      --secondary: #334155;
+      --accent: #0284c7;
+      --border: #e2e8f0;
+      --bg: #ffffff;
+      --card-bg: #f8fafc;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #0f172a;
+      color: #334155;
+      line-height: 1.55;
+      padding: 2rem 1rem;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .action-bar {
+      max-width: 850px;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.5rem;
+      padding: 0.75rem 1.25rem;
+      background: rgba(30, 41, 59, 0.8);
+      backdrop-filter: blur(12px);
+      border-radius: 0.75rem;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: #f8fafc;
+    }
+    .action-bar a, .action-bar button {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.6rem 1.2rem;
+      border-radius: 0.5rem;
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s ease;
+    }
+    .btn-back {
+      background: rgba(255, 255, 255, 0.1);
+      color: #f8fafc;
+    }
+    .btn-back:hover { background: rgba(255, 255, 255, 0.2); }
+    .btn-print {
+      background: #00f5a0;
+      color: #04101e;
+    }
+    .btn-print:hover { background: #00d9f5; box-shadow: 0 0 15px rgba(0, 245, 160, 0.4); }
+
+    .resume-sheet {
+      background: #ffffff;
+      max-width: 850px;
+      width: 100%;
+      padding: 3rem;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+      border-radius: 0.5rem;
+      color: #1e293b;
+    }
+    .resume-header {
+      border-bottom: 2px solid #0f172a;
+      padding-bottom: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+    .candidate-name {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2.25rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: #0f172a;
+      text-transform: uppercase;
+      margin-bottom: 0.4rem;
+    }
+    .contact-line {
+      font-size: 0.88rem;
+      color: #475569;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items: center;
+    }
+    .contact-line a {
+      color: #0284c7;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .section-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #0f172a;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      border-bottom: 1.5px solid #cbd5e1;
+      padding-bottom: 0.3rem;
+      margin: 1.5rem 0 0.85rem;
+    }
+    .summary-text {
+      font-size: 0.92rem;
+      color: #334155;
+      line-height: 1.6;
+    }
+    .skills-table {
+      width: 100%;
+      font-size: 0.9rem;
+      border-collapse: collapse;
+    }
+    .skills-table td {
+      padding: 0.35rem 0;
+      vertical-align: top;
+    }
+    .skill-cat {
+      width: 180px;
+      font-weight: 700;
+      color: #0f172a;
+    }
+    .skill-items {
+      color: #334155;
+    }
+
+    .exp-entry, .proj-entry, .edu-entry {
+      margin-bottom: 1.15rem;
+    }
+    .entry-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 0.25rem;
+    }
+    .entry-title {
+      font-weight: 700;
+      font-size: 0.98rem;
+      color: #0f172a;
+    }
+    .entry-subtitle {
+      font-size: 0.88rem;
+      color: #0284c7;
+      font-weight: 600;
+    }
+    .entry-date {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.82rem;
+      color: #64748b;
+    }
+    .entry-bullets {
+      list-style-type: disc;
+      padding-left: 1.25rem;
+      font-size: 0.88rem;
+      color: #334155;
+      line-height: 1.55;
+    }
+    .entry-bullets li {
+      margin-bottom: 0.3rem;
+    }
+    .tech-stack-line {
+      font-size: 0.84rem;
+      color: #475569;
+      margin-top: 0.3rem;
+    }
+    .tech-stack-line strong {
+      color: #0f172a;
+    }
+
+    @media print {
+      body {
+        background: #ffffff;
+        padding: 0;
+      }
+      .action-bar { display: none; }
+      .resume-sheet {
+        box-shadow: none;
+        padding: 0;
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="action-bar">
+    <a href="index.html" class="btn-back">
+      <i class="fa-solid fa-arrow-left"></i>
+      <span>Back to Portfolio</span>
+    </a>
+    <button onclick="window.print()" class="btn-print">
+      <i class="fa-solid fa-print"></i>
+      <span>Print / Save as PDF</span>
+    </button>
+  </div>
+
+  <div class="resume-sheet">
+    <header class="resume-header">
+      <h1 class="candidate-name">RESSHMA VP</h1>
+      <div class="contact-line">
+        <span>Nagercoil, Tamil Nadu</span>
+        <span>&bull;</span>
+        <a href="mailto:resshu2@gmail.com">resshu2@gmail.com</a>
+        <span>&bull;</span>
+        <span>ph: +91 8925106998</span>
+        <span>&bull;</span>
+        <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+        <span>&bull;</span>
+        <a href="https://github.com" target="_blank">GitHub</a>
+        <span>&bull;</span>
+        <a href="https://hackerrank.com" target="_blank">HackerRank</a>
+      </div>
+    </header>
+
+    <section>
+      <h2 class="section-title">Summary</h2>
+      <p class="summary-text">
+        Data Science undergraduate with a strong foundation in Python, SQL, statistics, and data analytics. Experienced in building machine learning models and applying data-driven techniques to solve real-world problems.
+      </p>
+    </section>
+
+    <section>
+      <h2 class="section-title">Skills</h2>
+      <table class="skills-table">
+        <tr>
+          <td class="skill-cat">Technical Languages:</td>
+          <td class="skill-items">Python, Java, SQL, HTML/CSS, JS, OOPs</td>
+        </tr>
+        <tr>
+          <td class="skill-cat">Tools & Frameworks:</td>
+          <td class="skill-items">Pandas, NumPy, Scikit-Learn, Power BI, Excel, Git, GitHub, FastAPI, Flask, Streamlit, Vue.js, React.js</td>
+        </tr>
+        <tr>
+          <td class="skill-cat">Databases:</td>
+          <td class="skill-items">MySQL, PostgreSQL, SQLite</td>
+        </tr>
+        <tr>
+          <td class="skill-cat">Core Competencies:</td>
+          <td class="skill-items">Machine Learning, Deep Learning, Data Visualization, Statistics, NLP, Cloud Computing, RAG, Prompt Engineering, Regression, Classification, Clustering, Feature Engineering, Hypothesis Testing</td>
+        </tr>
+      </table>
+    </section>
+
+    <section>
+      <h2 class="section-title">Work Experience</h2>
+
+      <div class="exp-entry">
+        <div class="entry-header">
+          <div>
+            <span class="entry-title">Data Science Intern</span> &bull; 
+            <span class="entry-subtitle">Techvolt Pvt Ltd | Coimbatore</span>
+          </div>
+          <span class="entry-date">Jul 2025 – Aug 2025</span>
+        </div>
+        <ul class="entry-bullets">
+          <li>Enhanced machine learning models using Scikit-learn to solve real-world business problems.</li>
+          <li>Collaborated with team members to analyze datasets and deliver actionable insights.</li>
+          <li>Documented model performance for accuracy improvement and presented findings to improve decision-making.</li>
+        </ul>
+      </div>
+
+      <div class="exp-entry">
+        <div class="entry-header">
+          <div>
+            <span class="entry-title">Data Science Intern</span> &bull; 
+            <span class="entry-subtitle">Elysium Technologies pvt Ltd | Madurai</span>
+          </div>
+          <span class="entry-date">Jun 2024</span>
+        </div>
+        <ul class="entry-bullets">
+          <li>Performed data cleaning and preprocessing on 5,000+ records, improving data quality for analysis.</li>
+          <li>Executed exploratory data analysis (EDA) using Python and Pandas to identify key trends.</li>
+          <li>Deployed machine learning models and created Power BI dashboards to support data-driven decisions.</li>
+        </ul>
+      </div>
+
+      <div class="exp-entry">
+        <div class="entry-header">
+          <div>
+            <span class="entry-title">Data Science Intern</span> &bull; 
+            <span class="entry-subtitle">Elewayte</span>
+          </div>
+          <span class="entry-date">Internship Trainee</span>
+        </div>
+        <ul class="entry-bullets">
+          <li>Gained hands-on experience in Python-based data preprocessing, EDA, visualization, feature engineering, and machine learning.</li>
+          <li>Worked with Pandas, NumPy, Matplotlib, and Seaborn to analyze datasets and build/evaluate ML models.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">Projects</h2>
+
+      <div class="proj-entry">
+        <div class="entry-header">
+          <span class="entry-title">AGRISENSE AI — Full-Stack AI Agriculture Platform</span>
+        </div>
+        <ul class="entry-bullets">
+          <li>Developed a full-stack agriculture platform with secure authentication, multilingual support, and AI-powered features using Vue.js and FastAPI.</li>
+          <li>Integrated crop recommendation, weather, market prices, government schemes, and a Gemini AI chatbot through APIs.</li>
+          <li>Deployed the application on Vercel, Render, and Railway MySQL.</li>
+        </ul>
+        <div class="tech-stack-line"><strong>Tech Stack:</strong> Python, FastAPI, Vue.js, MySQL, Gemini API, Git, GitHub, Vercel, Render, Railway</div>
+      </div>
+
+      <div class="proj-entry">
+        <div class="entry-header">
+          <span class="entry-title">MEDI GUARD AI — AI Powered Medication Safety System</span>
+        </div>
+        <ul class="entry-bullets">
+          <li>Developing an AI-powered medication management platform using React, FastAPI, Tesseract OCR, OpenCV, and Llama 3.2.</li>
+          <li>Scans medicine labels, extracts and structures medication information using OCR and LLMs, providing patient-specific medication tracking, drug interaction alerts, and adherence reminders.</li>
+        </ul>
+        <div class="tech-stack-line"><strong>Tech Stack:</strong> React.js, FastAPI, Python, Tesseract OCR, OpenCV, Llama 3.2, AI/LLM</div>
+      </div>
+
+      <div class="proj-entry">
+        <div class="entry-header">
+          <span class="entry-title">ONCOPREDICT SYSTEM — Breast Tumor Classification</span>
+        </div>
+        <ul class="entry-bullets">
+          <li>Developed a supervised ML model to classify breast tumors as benign or malignant using Python and Scikit-learn.</li>
+          <li>Performed data preprocessing, feature selection, and model evaluation; built an interactive Streamlit web app for real-time classification.</li>
+        </ul>
+        <div class="tech-stack-line"><strong>Tech Stack:</strong> Python, Pandas, NumPy, Scikit-learn, Streamlit</div>
+      </div>
+
+      <div class="proj-entry">
+        <div class="entry-header">
+          <span class="entry-title">IntelliRAG — PDF Question Answering System</span>
+        </div>
+        <ul class="entry-bullets">
+          <li>Developed a Retrieval-Augmented Generation (RAG) system that enables users to query information from uploaded PDF documents.</li>
+          <li>Implemented semantic embeddings, FAISS vector search, and LLM augmentation for accurate context-aware responses.</li>
+        </ul>
+        <div class="tech-stack-line"><strong>Tech Stack:</strong> Python, RAG, LLM, FAISS, Embeddings, NLP, PDF Processing</div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">Education</h2>
+      <div class="edu-entry">
+        <div class="entry-header">
+          <div>
+            <span class="entry-title">B.Tech Artificial Intelligence and Data Science</span> &bull; 
+            <span class="entry-subtitle">Ramco Institute of Technology, Rajapalayam</span>
+          </div>
+          <span class="entry-date">Sep 2023 – May 2027</span>
+        </div>
+        <div style="font-size: 0.88rem; margin-top: 0.25rem;">
+          <strong>CGPA: 8.63</strong> &bull; Relevant Courses: Operating System, Computer Network, Database and Management System
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">Certifications</h2>
+      <ul class="entry-bullets">
+        <li><strong>Explore Machine Learning using Python</strong> &mdash; Infosys Springboard (Issued: April 30, 2025)</li>
+        <li><strong>Introduction to Data Science</strong> &mdash; Cisco Networking Academy (Issued: 11 Nov 2024, ID: f56e996a-9166-468b-9766-721c8b61cf23)</li>
+        <li><strong>Deep Learning for Developers</strong> &mdash; Infosys Springboard (Issued: October 3, 2025)</li>
+        <li><strong>Networking Basics</strong> &mdash; Cisco Networking Academy (Issued: 02 Mar 2025)</li>
+        <li><strong>Microsoft Certified: Power BI Data Analyst</strong> &mdash; Trained in data visualization, data modeling, DAX and dashboard creation (May 2026)</li>
+      </ul>
+    </section>
+  </div>
+
+</body>
+</html>

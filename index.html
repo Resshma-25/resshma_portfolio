@@ -1,0 +1,1379 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="aurora">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RESSHMA VP | Data Science & AI Engineer</title>
+  <meta name="description" content="Portfolio of RESSHMA VP - Data Science & Artificial Intelligence Undergraduate, Machine Learning Engineer, and Full-Stack AI Developer.">
+  <meta name="keywords" content="Resshma VP, Data Science, Artificial Intelligence, Machine Learning, Python, FastAPI, React, RAG, Three.js, Portfolio">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="theme-aurora">
+  <!-- 3D Background Canvas -->
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- Ambient Glow Blobs -->
+  <div class="ambient-glow glow-1"></div>
+  <div class="ambient-glow glow-2"></div>
+  <div class="ambient-glow glow-3"></div>
+
+  <!-- Navigation Bar -->
+  <header class="navbar-wrapper">
+    <nav class="navbar" id="navbar">
+      <a href="#hero" class="nav-brand">
+        <span class="brand-bracket">&lt;</span>
+        <span class="brand-name">RESSHMA</span>
+        <span class="brand-highlight">.AI</span>
+        <span class="brand-bracket">/&gt;</span>
+      </a>
+
+      <ul class="nav-menu" id="nav-menu">
+        <li class="nav-item"><a href="#about" class="nav-link"><i class="fa-solid fa-user-astronaut"></i> About</a></li>
+        <li class="nav-item"><a href="#skills" class="nav-link"><i class="fa-solid fa-microchip"></i> Skills</a></li>
+        <li class="nav-item"><a href="#experience" class="nav-link"><i class="fa-solid fa-briefcase"></i> Experience</a></li>
+        <li class="nav-item"><a href="#projects" class="nav-link"><i class="fa-solid fa-diagram-project"></i> Projects</a></li>
+        <li class="nav-item"><a href="#playground" class="nav-link"><i class="fa-solid fa-flask-vial"></i> AI Lab</a></li>
+        <li class="nav-item"><a href="#certifications" class="nav-link"><i class="fa-solid fa-certificate"></i> Certs</a></li>
+        <li class="nav-item"><a href="#contact" class="nav-link"><i class="fa-solid fa-envelope"></i> Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <!-- Theme Switcher Selector -->
+        <div class="theme-picker-wrapper">
+          <button class="theme-picker-btn" id="theme-btn" title="Change Visual Theme" aria-label="Change Theme">
+            <i class="fa-solid fa-wand-magic-sparkles"></i>
+            <span class="theme-btn-label">Theme</span>
+          </button>
+          <div class="theme-dropdown" id="theme-dropdown">
+            <button class="theme-opt active" data-set-theme="aurora">
+              <span class="theme-preview-dot aurora"></span>
+              <span>Aurora Emerald</span>
+            </button>
+            <button class="theme-opt" data-set-theme="cyber">
+              <span class="theme-preview-dot cyber"></span>
+              <span>Cyber Neon</span>
+            </button>
+            <button class="theme-opt" data-set-theme="solar">
+              <span class="theme-preview-dot solar"></span>
+              <span>Solar Gold</span>
+            </button>
+            <button class="theme-opt" data-set-theme="titanium">
+              <span class="theme-preview-dot titanium"></span>
+              <span>Titanium Ice</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Resume Action Button -->
+        <a href="resume.html" target="_blank" class="btn btn-outline btn-sm nav-resume-btn" title="Open Printable Resume">
+          <i class="fa-solid fa-file-invoice"></i>
+          <span>Resume</span>
+        </a>
+
+        <!-- Contact CTA -->
+        <a href="#contact" class="btn btn-primary btn-sm nav-cta">
+          <span>Let's Talk</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+        <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation menu">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main Content Container -->
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero-section" id="hero">
+      <div class="container hero-container">
+        <div class="hero-content">
+          <div class="badge-status">
+            <span class="status-pulse"></span>
+            <span>Available for Data Science & AI Opportunities</span>
+          </div>
+
+          <h1 class="hero-title">
+            <span class="hero-greeting">Hello, I'm</span><br>
+            <span class="hero-name gradient-text">RESSHMA VP</span>
+          </h1>
+
+          <div class="typing-container">
+            <span class="typing-prefix">I am a </span>
+            <span class="typing-text" id="typing-text"></span>
+            <span class="cursor">&nbsp;</span>
+          </div>
+
+          <p class="hero-description">
+            Data Science & Artificial Intelligence undergraduate with strong expertise in 
+            <strong class="highlight">Machine Learning, Predictive Analytics, and Full-Stack AI Platforms</strong>. 
+            Passionate about transforming messy real-world datasets into intelligent, high-impact systems.
+          </p>
+
+          <div class="hero-badges">
+            <div class="hero-badge-pill">
+              <i class="fa-solid fa-graduation-cap"></i>
+              <span>Ramco Institute of Tech</span>
+            </div>
+            <div class="hero-badge-pill">
+              <i class="fa-solid fa-chart-line"></i>
+              <span>CGPA: 8.63</span>
+            </div>
+            <div class="hero-badge-pill">
+              <i class="fa-solid fa-location-dot"></i>
+              <span>Nagercoil, India</span>
+            </div>
+          </div>
+
+          <div class="hero-cta-group">
+            <a href="#projects" class="btn btn-primary">
+              <i class="fa-solid fa-rocket"></i>
+              <span>Explore Projects</span>
+            </a>
+            <a href="resume.html" target="_blank" class="btn btn-glass">
+              <i class="fa-solid fa-file-pdf"></i>
+              <span>View Resume</span>
+            </a>
+            <button class="btn btn-glass open-resume-modal-btn">
+              <i class="fa-solid fa-eye"></i>
+              <span>Quick Preview</span>
+            </button>
+            <a href="#contact" class="btn btn-outline" id="hero-email-btn">
+              <i class="fa-regular fa-envelope"></i>
+              <span>Contact Me</span>
+            </a>
+          </div>
+
+          <div class="social-bar">
+            <span class="social-label">Connect:</span>
+            <a href="mailto:resshu2@gmail.com" class="social-icon" title="Email: resshu2@gmail.com" aria-label="Email">
+              <i class="fa-solid fa-envelope"></i>
+            </a>
+            <a href="tel:8925106998" class="social-icon" title="Call: +91 8925106998" aria-label="Phone">
+              <i class="fa-solid fa-phone"></i>
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-icon" title="LinkedIn Profile" aria-label="LinkedIn">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-icon" title="GitHub Profile" aria-label="GitHub">
+              <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="https://hackerrank.com" target="_blank" rel="noopener noreferrer" class="social-icon" title="HackerRank" aria-label="HackerRank">
+              <i class="fa-brands fa-hackerrank"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- 3D Interactive Hero Canvas Visualizer -->
+        <div class="hero-3d-wrapper">
+          <div class="hero-3d-card glass-panel" data-tilt>
+            <div class="hero-3d-header">
+              <div class="terminal-dots">
+                <span class="dot dot-red"></span>
+                <span class="dot dot-yellow"></span>
+                <span class="dot dot-green"></span>
+              </div>
+              <div class="terminal-title">neural_matrix_core.py</div>
+              <div class="terminal-badge">LIVE 3D</div>
+            </div>
+            
+            <div id="hero-3d-canvas-container" class="hero-canvas-inner">
+              <!-- Three.js 3D Core rendered here -->
+              <div class="canvas-3d-hint">
+                <i class="fa-solid fa-hand-pointer"></i>
+                <span>Drag to rotate 3D Neural Sphere</span>
+              </div>
+            </div>
+
+            <div class="hero-3d-footer">
+              <div class="stat-pill">
+                <span class="stat-indicator"></span>
+                <span>Model: Active</span>
+              </div>
+              <div class="stat-pill">
+                <i class="fa-solid fa-network-wired"></i>
+                <span>Nodes: 384</span>
+              </div>
+              <div class="stat-pill">
+                <i class="fa-solid fa-bolt"></i>
+                <span>FP32 Compute</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scroll Indicator -->
+      <a href="#stats" class="scroll-down-indicator" aria-label="Scroll to stats">
+        <span>EXPLORE</span>
+        <i class="fa-solid fa-chevron-down"></i>
+      </a>
+    </section>
+
+    <!-- KEY STATS SECTION -->
+    <section class="stats-section" id="stats">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-card glass-panel" data-tilt>
+            <div class="stat-icon-wrapper cyan">
+              <i class="fa-solid fa-award"></i>
+            </div>
+            <div class="stat-details">
+              <div class="stat-number" data-target="8.63" data-decimals="2">8.63</div>
+              <div class="stat-title">B.Tech CGPA</div>
+              <div class="stat-desc">Ramco Institute of Technology</div>
+            </div>
+          </div>
+
+          <div class="stat-card glass-panel" data-tilt>
+            <div class="stat-icon-wrapper purple">
+              <i class="fa-solid fa-laptop-code"></i>
+            </div>
+            <div class="stat-details">
+              <div class="stat-number" data-target="3">3</div>
+              <div class="stat-title">DS Internships</div>
+              <div class="stat-desc">Techvolt, Elysium, Elewayte</div>
+            </div>
+          </div>
+
+          <div class="stat-card glass-panel" data-tilt>
+            <div class="stat-icon-wrapper blue">
+              <i class="fa-solid fa-certificate"></i>
+            </div>
+            <div class="stat-details">
+              <div class="stat-number" data-target="5">5+</div>
+              <div class="stat-title">Certified Credentials</div>
+              <div class="stat-desc">Infosys, Cisco, Microsoft</div>
+            </div>
+          </div>
+
+          <div class="stat-card glass-panel" data-tilt>
+            <div class="stat-icon-wrapper green">
+              <i class="fa-solid fa-layer-group"></i>
+            </div>
+            <div class="stat-details">
+              <div class="stat-number" data-target="8">8+</div>
+              <div class="stat-title">AI & Systems Projects</div>
+              <div class="stat-desc">Full-Stack AI, ML & IoT</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT & EDUCATION SECTION -->
+    <section class="section about-section" id="about">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle"><i class="fa-solid fa-user-astronaut"></i> Background</span>
+          <h2 class="section-title">About <span class="gradient-text">Me & Education</span></h2>
+          <p class="section-lead">Bridging the gap between mathematical machine learning and full-stack software architectures.</p>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-bio-card glass-panel" data-tilt>
+            <div class="card-tag"><i class="fa-solid fa-compass"></i> Overview</div>
+            <h3>Passionate Data Scientist & ML Problem Solver</h3>
+            <p>
+              I am an undergraduate specializing in <strong>Artificial Intelligence and Data Science</strong> with a strong 
+              grounding in statistical modeling, machine learning, and scalable software pipelines. 
+            </p>
+            <p>
+              From building <strong>multilingual agricultural platforms powered by Gemini AI</strong> to developing 
+              <strong>real-time oncological diagnostic tools</strong> and <strong>high-precision RAG systems</strong>, 
+              I focus on creating AI products that deliver measurable real-world utility.
+            </p>
+
+            <div class="contact-pill-list">
+              <div class="contact-pill">
+                <i class="fa-solid fa-envelope"></i>
+                <a href="mailto:resshu2@gmail.com" style="color: inherit; text-decoration: none;">resshu2@gmail.com</a>
+                <button class="copy-inline-btn" data-copy="resshu2@gmail.com" title="Copy Email">
+                  <i class="fa-regular fa-copy"></i>
+                </button>
+              </div>
+              <div class="contact-pill">
+                <i class="fa-solid fa-phone"></i>
+                <a href="tel:8925106998" style="color: inherit; text-decoration: none;">+91 8925106998</a>
+                <button class="copy-inline-btn" data-copy="8925106998" title="Copy Phone">
+                  <i class="fa-regular fa-copy"></i>
+                </button>
+              </div>
+              <div class="contact-pill">
+                <i class="fa-solid fa-location-dot"></i>
+                <span>Nagercoil, Tamil Nadu, India</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="education-card glass-panel" data-tilt>
+            <div class="card-tag"><i class="fa-solid fa-graduation-cap"></i> Academic Degree</div>
+            
+            <div class="edu-header">
+              <div class="edu-badge">
+                <i class="fa-solid fa-university"></i>
+              </div>
+              <div>
+                <h4 class="edu-degree">B.Tech in Artificial Intelligence & Data Science</h4>
+                <div class="edu-institution">Ramco Institute of Technology, Rajapalayam</div>
+                <div class="edu-timeline"><i class="fa-regular fa-calendar"></i> Sep 2023 &mdash; May 2027</div>
+              </div>
+            </div>
+
+            <div class="cgpa-highlight">
+              <div class="cgpa-score">8.63</div>
+              <div class="cgpa-meta">
+                <strong>Cumulative GPA</strong>
+                <span>Consistently high academic standing</span>
+              </div>
+            </div>
+
+            <div class="coursework-box">
+              <div class="coursework-title"><i class="fa-solid fa-book-open"></i> Key Coursework:</div>
+              <div class="coursework-tags">
+                <span class="tag">Operating Systems</span>
+                <span class="tag">Computer Networks</span>
+                <span class="tag">Database & Management Systems (DBMS)</span>
+                <span class="tag">Data Structures & OOPs</span>
+                <span class="tag">Probability & Statistics</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TECHNICAL SKILLS MATRIX -->
+    <section class="section skills-section" id="skills">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle"><i class="fa-solid fa-microchip"></i> Capabilities</span>
+          <h2 class="section-title">Technical <span class="gradient-text">Expertise</span></h2>
+          <p class="section-lead">A comprehensive toolbox spanning data manipulation, predictive modeling, web frameworks, and cloud deployment.</p>
+        </div>
+
+        <!-- Skills Filter Tabs -->
+        <div class="skills-filter-container">
+          <button class="filter-tab active" data-filter="all">All Skills</button>
+          <button class="filter-tab" data-filter="languages">Languages</button>
+          <button class="filter-tab" data-filter="ml-ai">ML & AI</button>
+          <button class="filter-tab" data-filter="data-analytics">Data & Analytics</button>
+          <button class="filter-tab" data-filter="web-backend">Web & Backend</button>
+          <button class="filter-tab" data-filter="database-tools">Databases & DevOps</button>
+        </div>
+
+        <div class="skills-grid" id="skills-grid">
+          <!-- Skill: Python -->
+          <div class="skill-card glass-panel" data-category="languages" data-tilt>
+            <div class="skill-icon-wrap"><i class="fa-brands fa-python"></i></div>
+            <div class="skill-info">
+              <h4>Python</h4>
+              <span class="skill-level">Core Proficiency</span>
+              <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 95%;"></div></div>
+            </div>
+          </div>
+
+          <!-- Skill: SQL -->
+          <div class="skill-card glass-panel" data-category="languages database-tools" data-tilt>
+            <div class="skill-icon-wrap"><i class="fa-solid fa-database"></i></div>
+            <div class="skill-info">
+              <h4>SQL</h4>
+              <span class="skill-level">Advanced Querying</span>
+              <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 90%;"></div></div>
+            </div>
+          </div>
+
+          <!-- Skill: Scikit-Learn -->
+          <div class="skill-card glass-panel" data-category="ml-ai data-analytics" data-tilt>
+            <div class="skill-icon-wrap"><i class="fa-solid fa-brain"></i></div>
+            <div class="skill-info">
+              <h4>Scikit-Learn</h4>
+              <span class="skill-level">Model Training & Tuning</span>
+              <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 92%;"></div></div>
+            </div>
+          </div>
+
+          <!-- Skill: Pandas & NumPy -->
+          <div class="skill-card glass-panel" data-category="data-analytics" data-tilt>
+            <div class="skill-icon-wrap"><i class="fa-solid fa-table-cells"></i></div>
+            <div class="skill-info">
+              <h4>Pandas & NumPy</h4>
+              <span class="skill-level">Data Wrangling & Vectorization</span>
+              <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 94%;"></div></div>
+            </div>
+          </div>
+
+          <!-- Skill: Machine Learning Competencies -->
+          <div class="skill-card glass-panel" data-category="ml-ai" data-tilt>
+            <div class="skill-icon-wrap"><i class="fa-solid fa-chart-pie"></i></div>
+            <div class="skill-info">
+              <h4>Regression & Classification</h4>
+              <span class="skill-level">Supervised Algorithms</span>
+              <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 90%;"></div></div>
+            </div>
+          </div>
+
+          <!-- Skill: RAG & NLP -->
+          <div class="skill-card glass-panel" data-category="ml-ai" data-tilt>
+            <div class="skill-icon-wrap"><i class="fa-solid fa-diagram-project"></i></div>
+            <div class="skill-info">
+              <h4>RAG & Vector Search (FAISS)</h4>
+              <span class="skill-level">Semantic Retrieval & LLMs</span>
+              <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 88%;"></div></div>
+            </div>
+          </div>
+
+          <!-- Skill: Power BI & DAX -->
+          <div class="skill-card glass-panel" data-category="data-analytics" data-tilt>
+            <div class="skill-icon-wrap"><i class="fa-solid fa-chart-column"></i></div>
+            <div class="skill-info">
+              <h4>Power BI & DAX</h4>
+              <span class="skill-level">Certified Analyst</span>
+              <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 92%;"></div></div>
+            </div>
+          </div>
+
+          <!-- Skill: FastAPI & Flask -->
+          <div class="skill-card glass-panel" data-category="web-backend" data-tilt>
+            <div class="skill-icon-wrap"><i class="fa-solid fa-server"></i></div>
+            <div class="skill-info">
+              <h4>FastAPI & Flask</h4>
+              <span class="skill-level">RESTful Microservices</span>
+              <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 88%;"></div></div>
+            </div>
+          </div>
+
+          <!-- Skill: React & Vue -->
+          <div class="skill-card glass-panel" data-category="web-backend" data-tilt>
+            <div class="skill-icon-wrap"><i class="fa-brands fa-react"></i></div>
+            <div class="skill-info">
+              <h4>React.js & Vue.js</h4>
+              <span class="skill-level">Full-Stack Frontend</span>
+              <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 82%;"></div></div>
+            </div>
+          </div>
+
+          <!-- Skill: Java & OOPs -->
+          <div class="skill-card glass-panel" data-category="languages" data-tilt>
+            <div class="skill-icon-wrap"><i class="fa-brands fa-java"></i></div>
+            <div class="skill-info">
+              <h4>Java & OOPs</h4>
+              <span class="skill-level">System Architecture</span>
+              <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 85%;"></div></div>
+            </div>
+          </div>
+
+          <!-- Skill: Matplotlib & Seaborn -->
+          <div class="skill-card glass-panel" data-category="data-analytics" data-tilt>
+            <div class="skill-icon-wrap"><i class="fa-solid fa-chart-area"></i></div>
+            <div class="skill-info">
+              <h4>Matplotlib & Seaborn</h4>
+              <span class="skill-level">EDA & Visual Storytelling</span>
+              <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 90%;"></div></div>
+            </div>
+          </div>
+
+          <!-- Skill: Databases (MySQL, PostgreSQL, SQLite) -->
+          <div class="skill-card glass-panel" data-category="database-tools" data-tilt>
+            <div class="skill-icon-wrap"><i class="fa-solid fa-network-wired"></i></div>
+            <div class="skill-info">
+              <h4>PostgreSQL & MySQL</h4>
+              <span class="skill-level">Relational Storage & ORMs</span>
+              <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 87%;"></div></div>
+            </div>
+          </div>
+
+          <!-- Skill: Deep Learning & CV / NLP -->
+          <div class="skill-card glass-panel" data-category="ml-ai" data-tilt>
+            <div class="skill-icon-wrap"><i class="fa-solid fa-eye"></i></div>
+            <div class="skill-info">
+              <h4>OpenCV & Tesseract OCR</h4>
+              <span class="skill-level">Computer Vision & OCR</span>
+              <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 84%;"></div></div>
+            </div>
+          </div>
+
+          <!-- Skill: Git & GitHub & Cloud Deployment -->
+          <div class="skill-card glass-panel" data-category="database-tools" data-tilt>
+            <div class="skill-icon-wrap"><i class="fa-brands fa-github"></i></div>
+            <div class="skill-info">
+              <h4>Git & Cloud Deployment</h4>
+              <span class="skill-level">Vercel, Render, Railway</span>
+              <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 88%;"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WORK EXPERIENCE TIMELINE -->
+    <section class="section experience-section" id="experience">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle"><i class="fa-solid fa-briefcase"></i> Track Record</span>
+          <h2 class="section-title">Work <span class="gradient-text">Experience</span></h2>
+          <p class="section-lead">Industry internships focused on end-to-end data pipelines, exploratory analysis, and ML deployment.</p>
+        </div>
+
+        <div class="timeline-container">
+          <!-- Timeline Item 1: Techvolt -->
+          <div class="timeline-item" data-tilt>
+            <div class="timeline-dot">
+              <i class="fa-solid fa-bolt"></i>
+            </div>
+            <div class="timeline-content glass-panel">
+              <div class="timeline-badge-date">Jul 2025 &mdash; Aug 2025</div>
+              <h3 class="timeline-role">Data Science Intern</h3>
+              <div class="timeline-company">
+                <i class="fa-solid fa-building"></i> Techvolt Pvt Ltd &bull; Coimbatore
+              </div>
+              <ul class="timeline-bullets">
+                <li>Enhanced machine learning models using <strong>Scikit-learn</strong> to solve real-world enterprise business problems.</li>
+                <li>Collaborated closely with cross-functional team members to analyze large datasets and deliver actionable intelligence.</li>
+                <li>Documented model performance for continuous accuracy improvement and presented strategic findings to leadership to guide decision-making.</li>
+              </ul>
+              <div class="timeline-tags">
+                <span class="tag">Scikit-learn</span>
+                <span class="tag">Python</span>
+                <span class="tag">Model Optimization</span>
+                <span class="tag">Actionable Insights</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Timeline Item 2: Elysium Technologies -->
+          <div class="timeline-item" data-tilt>
+            <div class="timeline-dot">
+              <i class="fa-solid fa-database"></i>
+            </div>
+            <div class="timeline-content glass-panel">
+              <div class="timeline-badge-date">Jun 2024</div>
+              <h3 class="timeline-role">Data Science Intern</h3>
+              <div class="timeline-company">
+                <i class="fa-solid fa-building"></i> Elysium Technologies Pvt Ltd &bull; Madurai
+              </div>
+              <ul class="timeline-bullets">
+                <li>Performed comprehensive data cleaning and preprocessing on <strong>5,000+ records</strong>, significantly improving data quality for downstream analytics.</li>
+                <li>Executed rigorous exploratory data analysis (EDA) using <strong>Python and Pandas</strong> to uncover key underlying patterns and trends.</li>
+                <li>Deployed predictive machine learning models and developed rich, interactive <strong>Power BI dashboards</strong> to support data-driven decision making.</li>
+              </ul>
+              <div class="timeline-tags">
+                <span class="tag">Data Cleaning</span>
+                <span class="tag">EDA</span>
+                <span class="tag">Pandas</span>
+                <span class="tag">Power BI</span>
+                <span class="tag">ML Deployment</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Timeline Item 3: Elewayte -->
+          <div class="timeline-item" data-tilt>
+            <div class="timeline-dot">
+              <i class="fa-solid fa-brain"></i>
+            </div>
+            <div class="timeline-content glass-panel">
+              <div class="timeline-badge-date">Data Science Trainee / Intern</div>
+              <h3 class="timeline-role">Data Science Intern</h3>
+              <div class="timeline-company">
+                <i class="fa-solid fa-building"></i> Elewayte
+              </div>
+              <ul class="timeline-bullets">
+                <li>Gained immersive hands-on experience in the complete end-to-end data science lifecycle: preprocessing, feature engineering, and statistical modeling.</li>
+                <li>Utilized <strong>Pandas, NumPy, Matplotlib, and Seaborn</strong> to analyze complex data distributions and build robust visual diagnostic charts.</li>
+                <li>Built and evaluated iterative ML models, understanding evaluation metrics (Precision, Recall, ROC-AUC) for real-world reliability.</li>
+              </ul>
+              <div class="timeline-tags">
+                <span class="tag">Feature Engineering</span>
+                <span class="tag">Matplotlib</span>
+                <span class="tag">Seaborn</span>
+                <span class="tag">Model Evaluation</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURED & MINI PROJECTS SHOWCASE -->
+    <section class="section projects-section" id="projects">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle"><i class="fa-solid fa-diagram-project"></i> Portfolio Works</span>
+          <h2 class="section-title">Featured <span class="gradient-text">Projects</span></h2>
+          <p class="section-lead">From LLM & RAG architectures to Computer Vision and IoT hardware monitoring systems.</p>
+        </div>
+
+        <!-- Project Filter Buttons -->
+        <div class="projects-filter-bar">
+          <button class="project-filter-btn active" data-pfilter="all">All Projects (8)</button>
+          <button class="project-filter-btn" data-pfilter="ai-ml">AI & Machine Learning</button>
+          <button class="project-filter-btn" data-pfilter="fullstack">Full-Stack AI Platforms</button>
+          <button class="project-filter-btn" data-pfilter="systems">Systems & IoT</button>
+        </div>
+
+        <div class="projects-grid" id="projects-grid">
+          <!-- Project 1: AGRISENSE AI -->
+          <div class="project-card glass-panel" data-pcat="fullstack ai-ml" data-tilt>
+            <div class="project-card-header">
+              <div class="project-type-tag"><i class="fa-solid fa-seedling"></i> Full-Stack AI Platform</div>
+              <div class="project-deploy-badge">Deployed</div>
+            </div>
+            <h3 class="project-title">AGRISENSE AI &mdash; Smart Agriculture Platform</h3>
+            <p class="project-summary">
+              Comprehensive full-stack agricultural platform providing AI-driven crop recommendations, live weather analysis, market prices, government schemes, and an intelligent Gemini AI multilingual chatbot.
+            </p>
+            <div class="project-tech-tags">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">FastAPI</span>
+              <span class="tech-tag">Vue.js</span>
+              <span class="tech-tag">MySQL</span>
+              <span class="tech-tag">Gemini AI API</span>
+              <span class="tech-tag">Vercel</span>
+              <span class="tech-tag">Render</span>
+            </div>
+            <div class="project-card-actions">
+              <button class="btn btn-sm btn-outline open-modal-btn" data-project="agrisense">
+                <span>View Architecture</span>
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Project 2: MEDI GUARD AI -->
+          <div class="project-card glass-panel" data-pcat="fullstack ai-ml" data-tilt>
+            <div class="project-card-header">
+              <div class="project-type-tag"><i class="fa-solid fa-prescription-bottle-medical"></i> Healthcare AI</div>
+              <div class="project-deploy-badge active-dev">In Active Dev</div>
+            </div>
+            <h3 class="project-title">MEDI GUARD AI &mdash; Medication Safety System</h3>
+            <p class="project-summary">
+              AI-driven medication intelligence platform utilizing Computer Vision (OpenCV, Tesseract OCR) and Llama 3.2 to scan medicine labels, extract dosage protocols, alert for contraindications, and provide adherence reminders.
+            </p>
+            <div class="project-tech-tags">
+              <span class="tech-tag">React.js</span>
+              <span class="tech-tag">FastAPI</span>
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">Tesseract OCR</span>
+              <span class="tech-tag">OpenCV</span>
+              <span class="tech-tag">Llama 3.2</span>
+            </div>
+            <div class="project-card-actions">
+              <button class="btn btn-sm btn-outline open-modal-btn" data-project="mediguard">
+                <span>View Architecture</span>
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Project 3: ONCOPREDICT SYSTEM -->
+          <div class="project-card glass-panel" data-pcat="ai-ml" data-tilt>
+            <div class="project-card-header">
+              <div class="project-type-tag"><i class="fa-solid fa-dna"></i> Oncology Machine Learning</div>
+              <div class="project-deploy-badge">Interactive App</div>
+            </div>
+            <h3 class="project-title">ONCOPREDICT &mdash; Breast Tumor Classification</h3>
+            <p class="project-summary">
+              Supervised machine learning diagnostic system to classify breast tumors as benign or malignant. Built with Scikit-learn, featuring comprehensive feature engineering, and deployed via interactive Streamlit web dashboard.
+            </p>
+            <div class="project-tech-tags">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">Scikit-learn</span>
+              <span class="tech-tag">Streamlit</span>
+              <span class="tech-tag">Pandas</span>
+              <span class="tech-tag">NumPy</span>
+            </div>
+            <div class="project-card-actions">
+              <button class="btn btn-sm btn-outline open-modal-btn" data-project="oncopredict">
+                <span>View Details</span>
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </button>
+              <a href="#playground" class="btn btn-sm btn-primary">
+                <span>Test in Lab</span>
+                <i class="fa-solid fa-flask"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Project 4: IntelliRAG -->
+          <div class="project-card glass-panel" data-pcat="ai-ml" data-tilt>
+            <div class="project-card-header">
+              <div class="project-type-tag"><i class="fa-solid fa-file-pdf"></i> LLM & RAG System</div>
+              <div class="project-deploy-badge">Vector DB</div>
+            </div>
+            <h3 class="project-title">IntelliRAG &mdash; PDF Document Intelligence</h3>
+            <p class="project-summary">
+              Retrieval-Augmented Generation (RAG) system allowing contextual Q&A over complex PDF documents. Integrates document chunking, semantic vector embeddings, FAISS vector indexing, and LLM response synthesis.
+            </p>
+            <div class="project-tech-tags">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">FAISS</span>
+              <span class="tech-tag">Semantic Embeddings</span>
+              <span class="tech-tag">LLMs</span>
+              <span class="tech-tag">NLP</span>
+            </div>
+            <div class="project-card-actions">
+              <button class="btn btn-sm btn-outline open-modal-btn" data-project="intellirag">
+                <span>View Details</span>
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </button>
+              <a href="#playground" class="btn btn-sm btn-primary">
+                <span>Test Vector Search</span>
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Project 5: Smart Cold Chain Logistics Box -->
+          <div class="project-card glass-panel" data-pcat="systems" data-tilt>
+            <div class="project-card-header">
+              <div class="project-type-tag"><i class="fa-solid fa-box-open"></i> IoT & Embedded Systems</div>
+              <div class="project-deploy-badge">Hardware + Cloud</div>
+            </div>
+            <h3 class="project-title">Smart Cold Chain Logistics Monitoring Box</h3>
+            <p class="project-summary">
+              IoT-based cold-chain hardware system utilizing ESP32 & FreeRTOS to monitor temperature, humidity, door integrity, battery, and GPS coordinates with automated temperature regulation and MQTT telemetry.
+            </p>
+            <div class="project-tech-tags">
+              <span class="tech-tag">ESP32</span>
+              <span class="tech-tag">FreeRTOS</span>
+              <span class="tech-tag">DS18B20</span>
+              <span class="tech-tag">DHT22</span>
+              <span class="tech-tag">MQTT</span>
+              <span class="tech-tag">PostgreSQL</span>
+              <span class="tech-tag">React</span>
+            </div>
+            <div class="project-card-actions">
+              <button class="btn btn-sm btn-outline open-modal-btn" data-project="coldchain">
+                <span>View Details</span>
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Project 6: Real-Time Data Streaming with Kafka Simulation -->
+          <div class="project-card glass-panel" data-pcat="systems data-analytics" data-tilt>
+            <div class="project-card-header">
+              <div class="project-type-tag"><i class="fa-solid fa-network-wired"></i> Big Data & Streaming</div>
+              <div class="project-deploy-badge">Simulation</div>
+            </div>
+            <h3 class="project-title">Real-Time Data Streaming & Analytics</h3>
+            <p class="project-summary">
+              Simulated real-time transaction streaming architecture that generates, ingests, and analyzes high-velocity financial transaction events for anomaly and fraud detection with dynamic analytics visualizations.
+            </p>
+            <div class="project-tech-tags">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">Kafka Simulation</span>
+              <span class="tech-tag">JSON Stream</span>
+              <span class="tech-tag">Matplotlib</span>
+              <span class="tech-tag">Fraud Detection</span>
+            </div>
+            <div class="project-card-actions">
+              <button class="btn btn-sm btn-outline open-modal-btn" data-project="kafka">
+                <span>View Details</span>
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Project 7: Socket-Based IPC Tool -->
+          <div class="project-card glass-panel" data-pcat="systems" data-tilt>
+            <div class="project-card-header">
+              <div class="project-type-tag"><i class="fa-solid fa-terminal"></i> Networking & Systems</div>
+              <div class="project-deploy-badge">Core Python</div>
+            </div>
+            <h3 class="project-title">Socket-Based Inter-Process Communication</h3>
+            <p class="project-summary">
+              Multi-threaded TCP socket-based client-server framework enabling low-latency real-time bidirectional message exchange between distinct processes with graceful fault recovery and connection pools.
+            </p>
+            <div class="project-tech-tags">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">Socket Programming</span>
+              <span class="tech-tag">TCP/IP</span>
+              <span class="tech-tag">Threading</span>
+            </div>
+            <div class="project-card-actions">
+              <button class="btn btn-sm btn-outline open-modal-btn" data-project="ipc">
+                <span>View Details</span>
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Project 8: Event Management System -->
+          <div class="project-card glass-panel" data-pcat="systems" data-tilt>
+            <div class="project-card-header">
+              <div class="project-type-tag"><i class="fa-solid fa-ticket"></i> Enterprise Software</div>
+              <div class="project-deploy-badge">Java & SQL</div>
+            </div>
+            <h3 class="project-title">Event Management & Ticketing Engine</h3>
+            <p class="project-summary">
+              Robust console-based application written in Java featuring relational MySQL database persistence via JDBC for event scheduling, participant registration, automated seat inventory, and revenue tracking.
+            </p>
+            <div class="project-tech-tags">
+              <span class="tech-tag">Java</span>
+              <span class="tech-tag">MySQL</span>
+              <span class="tech-tag">JDBC</span>
+              <span class="tech-tag">Relational Design</span>
+            </div>
+            <div class="project-card-actions">
+              <button class="btn btn-sm btn-outline open-modal-btn" data-project="events">
+                <span>View Details</span>
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTERACTIVE AI LAB & PLAYGROUND -->
+    <section class="section playground-section" id="playground">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle"><i class="fa-solid fa-flask-vial"></i> Live Interaction</span>
+          <h2 class="section-title">Interactive <span class="gradient-text">AI Lab</span></h2>
+          <p class="section-lead">Test live in-browser data science prototypes inspired by my machine learning and RAG systems.</p>
+        </div>
+
+        <div class="playground-card glass-panel" data-tilt>
+          <div class="lab-tabs">
+            <button class="lab-tab active" data-tab="oncopredict-lab">
+              <i class="fa-solid fa-dna"></i>
+              <span>OncoPredict ML Simulator</span>
+            </button>
+            <button class="lab-tab" data-tab="rag-lab">
+              <i class="fa-solid fa-magnifying-glass-chart"></i>
+              <span>IntelliRAG Vector Semantic Search</span>
+            </button>
+          </div>
+
+          <!-- LAB 1: ONCOPREDICT SIMULATOR -->
+          <div class="lab-content active" id="oncopredict-lab">
+            <div class="lab-grid">
+              <div class="lab-controls">
+                <h4><i class="fa-solid fa-sliders"></i> Tumor Morphological Features</h4>
+                <p class="lab-hint">Adjust normalized biopsy parameters to observe real-time classification probability.</p>
+
+                <!-- Slider 1 -->
+                <div class="control-group">
+                  <div class="control-label">
+                    <span>Radius Mean (\(\mu m\))</span>
+                    <span id="radius-val" class="param-val">14.2</span>
+                  </div>
+                  <input type="range" id="radius-slider" min="6.0" max="28.0" step="0.1" value="14.2" class="range-slider">
+                </div>
+
+                <!-- Slider 2 -->
+                <div class="control-group">
+                  <div class="control-label">
+                    <span>Texture Mean (Standard Deviation)</span>
+                    <span id="texture-val" class="param-val">19.3</span>
+                  </div>
+                  <input type="range" id="texture-slider" min="9.0" max="40.0" step="0.1" value="19.3" class="range-slider">
+                </div>
+
+                <!-- Slider 3 -->
+                <div class="control-group">
+                  <div class="control-label">
+                    <span>Perimeter Mean (\(mm\))</span>
+                    <span id="perimeter-val" class="param-val">92.0</span>
+                  </div>
+                  <input type="range" id="perimeter-slider" min="40.0" max="190.0" step="0.5" value="92.0" class="range-slider">
+                </div>
+
+                <!-- Slider 4 -->
+                <div class="control-group">
+                  <div class="control-label">
+                    <span>Smoothness (Local Variation)</span>
+                    <span id="smoothness-val" class="param-val">0.096</span>
+                  </div>
+                  <input type="range" id="smoothness-slider" min="0.05" max="0.16" step="0.001" value="0.096" class="range-slider">
+                </div>
+
+                <div class="quick-preset-btns">
+                  <button class="btn btn-sm btn-outline preset-btn" data-preset="benign">Load Benign Sample</button>
+                  <button class="btn btn-sm btn-outline preset-btn" data-preset="malignant">Load Malignant Sample</button>
+                </div>
+              </div>
+
+              <div class="lab-output">
+                <h4><i class="fa-solid fa-chart-pie"></i> Real-Time Model Inference</h4>
+                
+                <div class="prediction-box" id="prediction-box">
+                  <div class="pred-status-icon" id="pred-icon">
+                    <i class="fa-solid fa-shield-halved"></i>
+                  </div>
+                  <div class="pred-status-text">
+                    <span class="pred-type-label">Diagnosis Classification</span>
+                    <h3 id="pred-result-label" class="pred-label benign">BENIGN TUMOR</h3>
+                  </div>
+                </div>
+
+                <div class="probability-container">
+                  <div class="prob-header">
+                    <span>Malignancy Probability</span>
+                    <span id="malignancy-percentage" class="prob-value">18.4%</span>
+                  </div>
+                  <div class="prob-bar-bg">
+                    <div id="prob-bar-fill" class="prob-bar-fill" style="width: 18.4%;"></div>
+                  </div>
+                  <div class="prob-legend">
+                    <span>0% Benign Safe</span>
+                    <span>Threshold: 50%</span>
+                    <span>100% High Risk</span>
+                  </div>
+                </div>
+
+                <div class="model-meta-info">
+                  <div class="meta-item">
+                    <span class="meta-label">Classifier:</span>
+                    <span class="meta-val">Logistic / Logistic Sigmoid with L2 Regularization</span>
+                  </div>
+                  <div class="meta-item">
+                    <span class="meta-label">Training Source:</span>
+                    <span class="meta-val">Wisconsin Breast Cancer Diagnostic Dataset</span>
+                  </div>
+                  <div class="meta-item">
+                    <span class="meta-label">Preprocessing:</span>
+                    <span class="meta-val">StandardScaler &bull; 30 Extracted Cell Nuclei Features</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- LAB 2: INTELLIRAG VECTOR SEARCH -->
+          <div class="lab-content" id="rag-lab">
+            <div class="rag-lab-wrapper">
+              <div class="rag-query-bar">
+                <input type="text" id="rag-query-input" placeholder="Ask a question across indexed documents (e.g. 'What is the dosage protocol?' or 'What crops suit acidic soil?')..." value="What are the optimal temperature thresholds for vaccine storage?">
+                <button class="btn btn-primary" id="rag-search-btn">
+                  <i class="fa-solid fa-vector-square"></i>
+                  <span>Execute Vector Search</span>
+                </button>
+              </div>
+
+              <div class="rag-sample-queries">
+                <span class="sample-tag-title">Try sample questions:</span>
+                <button class="sample-query-pill" data-query="What are the optimal temperature thresholds for vaccine storage?">Cold-Chain Temperature</button>
+                <button class="sample-query-pill" data-query="How does AgriSense predict optimal crop yield for loamy soil?">AgriSense Soil Recommendation</button>
+                <button class="sample-query-pill" data-query="What precautions should be taken when taking anticoagulant medications?">Drug Safety Alerts</button>
+              </div>
+
+              <div class="rag-results-container" id="rag-results-container">
+                <div class="rag-retrieval-columns">
+                  <div class="rag-chunks-pane">
+                    <h5><i class="fa-solid fa-layer-group"></i> Retrieved Vector Chunks (FAISS Cosine Similarity)</h5>
+                    <div class="chunk-list" id="chunk-list">
+                      <!-- Rendered by JS -->
+                    </div>
+                  </div>
+
+                  <div class="rag-synthesis-pane">
+                    <h5><i class="fa-solid fa-robot"></i> LLM Synthesized Answer</h5>
+                    <div class="synthesis-box" id="synthesis-box">
+                      <!-- Rendered by JS -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CERTIFICATIONS & HONORS SECTION (With Real Images & Verification) -->
+    <section class="section cert-section" id="certifications">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle"><i class="fa-solid fa-certificate"></i> Validated Credentials</span>
+          <h2 class="section-title">Certifications & <span class="gradient-text">Credentials</span></h2>
+          <p class="section-lead">Verified industry and academic certifications in Machine Learning, Deep Learning, Data Science, and Business Intelligence.</p>
+        </div>
+
+        <div class="cert-grid-gallery">
+          <!-- Cert 1: Infosys Explore Machine Learning using Python -->
+          <div class="cert-visual-card glass-panel" data-tilt>
+            <div class="cert-img-wrapper" data-cert-img="assets/certificates/infosys-ml-python.jpg" data-cert-title="Explore Machine Learning using Python — Infosys Springboard">
+              <img src="assets/certificates/infosys-ml-python.jpg" alt="Explore Machine Learning using Python - Infosys Springboard" loading="lazy">
+              <div class="cert-img-overlay">
+                <i class="fa-solid fa-magnifying-glass-plus"></i>
+                <span>Click to Enlarge</span>
+              </div>
+            </div>
+            <div class="cert-details-wrap">
+              <div class="cert-issuer-row">
+                <span class="issuer-tag infosys"><i class="fa-solid fa-building-columns"></i> Infosys Springboard</span>
+                <span class="cert-date-tag">Issued: April 30, 2025</span>
+              </div>
+              <h3 class="cert-title-text">Explore Machine Learning using Python</h3>
+              <p class="cert-desc-text">
+                Demonstrated core algorithmic competencies in supervised and unsupervised learning, dataset feature extraction, regression, and model validation with Python.
+              </p>
+              <div class="cert-footer-row">
+                <a href="https://verify.onwingspan.com" target="_blank" rel="noopener noreferrer" class="cert-verify-link">
+                  <i class="fa-solid fa-qrcode"></i> Verify at onwingspan.com
+                </a>
+                <span class="badge-status-pill verified"><i class="fa-solid fa-check"></i> Verified</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Cert 2: Cisco Introduction to Data Science -->
+          <div class="cert-visual-card glass-panel" data-tilt>
+            <div class="cert-img-wrapper" data-cert-img="assets/certificates/cisco-intro-datascience.jpg" data-cert-title="Introduction to Data Science — Cisco Networking Academy">
+              <img src="assets/certificates/cisco-intro-datascience.jpg" alt="Introduction to Data Science - Cisco Networking Academy" loading="lazy">
+              <div class="cert-img-overlay">
+                <i class="fa-solid fa-magnifying-glass-plus"></i>
+                <span>Click to Enlarge</span>
+              </div>
+            </div>
+            <div class="cert-details-wrap">
+              <div class="cert-issuer-row">
+                <span class="issuer-tag cisco"><i class="fa-solid fa-network-wired"></i> Cisco Networking Academy</span>
+                <span class="cert-date-tag">Issued: 11 Nov 2024</span>
+              </div>
+              <h3 class="cert-title-text">Introduction to Data Science</h3>
+              <p class="cert-desc-text">
+                Foundational proficiency in exploratory data analytics, statistical distributions, data wrangling pipelines, and scientific data storytelling.
+              </p>
+              <div class="cert-footer-row">
+                <span class="cert-id-tag">ID: f56e996a-9166-468b-9766-721c8b61cf23</span>
+                <span class="badge-status-pill verified"><i class="fa-solid fa-check"></i> Verified</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Cert 3: Infosys Deep Learning for Developers -->
+          <div class="cert-visual-card glass-panel" data-tilt>
+            <div class="cert-img-wrapper" data-cert-img="assets/certificates/infosys-deep-learning.jpg" data-cert-title="Deep Learning for Developers — Infosys Springboard">
+              <img src="assets/certificates/infosys-deep-learning.jpg" alt="Deep Learning for Developers - Infosys Springboard" loading="lazy">
+              <div class="cert-img-overlay">
+                <i class="fa-solid fa-magnifying-glass-plus"></i>
+                <span>Click to Enlarge</span>
+              </div>
+            </div>
+            <div class="cert-details-wrap">
+              <div class="cert-issuer-row">
+                <span class="issuer-tag infosys"><i class="fa-solid fa-brain"></i> Infosys Springboard</span>
+                <span class="cert-date-tag">Issued: October 3, 2025</span>
+              </div>
+              <h3 class="cert-title-text">Deep Learning for Developers</h3>
+              <p class="cert-desc-text">
+                Advanced concepts in Artificial Neural Networks, backpropagation, Convolutional architectures, recurrent units, and neural network optimization.
+              </p>
+              <div class="cert-footer-row">
+                <a href="https://verify.onwingspan.com" target="_blank" rel="noopener noreferrer" class="cert-verify-link">
+                  <i class="fa-solid fa-qrcode"></i> Verify at onwingspan.com
+                </a>
+                <span class="badge-status-pill verified"><i class="fa-solid fa-check"></i> Verified</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Cert 4: Cisco Networking Basics -->
+          <div class="cert-visual-card glass-panel" data-tilt>
+            <div class="cert-img-wrapper" data-cert-img="assets/certificates/cisco-networking-basics.jpg" data-cert-title="Networking Basics — Cisco Networking Academy">
+              <img src="assets/certificates/cisco-networking-basics.jpg" alt="Networking Basics - Cisco Networking Academy" loading="lazy">
+              <div class="cert-img-overlay">
+                <i class="fa-solid fa-magnifying-glass-plus"></i>
+                <span>Click to Enlarge</span>
+              </div>
+            </div>
+            <div class="cert-details-wrap">
+              <div class="cert-issuer-row">
+                <span class="issuer-tag cisco"><i class="fa-solid fa-server"></i> Cisco Networking Academy</span>
+                <span class="cert-date-tag">Issued: 02 Mar 2025</span>
+              </div>
+              <h3 class="cert-title-text">Networking Basics</h3>
+              <p class="cert-desc-text">
+                Comprehensive training in OSI & TCP/IP layered networking, packet routing, IP addressing, socket transport protocols, and local infrastructure diagnostics.
+              </p>
+              <div class="cert-footer-row">
+                <span class="cert-id-tag">Cisco Verified Credential</span>
+                <span class="badge-status-pill verified"><i class="fa-solid fa-check"></i> Verified</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Cert 5: Microsoft Certified Power BI Data Analyst -->
+          <div class="cert-visual-card glass-panel" data-tilt>
+            <div class="cert-badge-header-box microsoft">
+              <i class="fa-solid fa-chart-column"></i>
+              <span>Microsoft Certified</span>
+            </div>
+            <div class="cert-details-wrap">
+              <div class="cert-issuer-row">
+                <span class="issuer-tag microsoft"><i class="fa-brands fa-microsoft"></i> Microsoft</span>
+                <span class="cert-date-tag">Certified: May 2026</span>
+              </div>
+              <h3 class="cert-title-text">Microsoft Power BI Data Analyst</h3>
+              <p class="cert-desc-text">
+                Trained in robust business intelligence architecture, relational Star schema data modeling, advanced DAX expressions, automated ETL transformations, and executive dashboard design.
+              </p>
+              <div class="cert-footer-row">
+                <span class="tag">DAX</span>
+                <span class="tag">Power BI</span>
+                <span class="tag">Data Modeling</span>
+                <span class="badge-status-pill verified"><i class="fa-solid fa-check"></i> Certified</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Cert 6: HackerRank Problem Solving & Python -->
+          <div class="cert-visual-card glass-panel" data-tilt>
+            <div class="cert-badge-header-box hackerrank">
+              <i class="fa-brands fa-hackerrank"></i>
+              <span>HackerRank Verified</span>
+            </div>
+            <div class="cert-details-wrap">
+              <div class="cert-issuer-row">
+                <span class="issuer-tag hackerrank"><i class="fa-brands fa-hackerrank"></i> HackerRank</span>
+                <span class="cert-date-tag">Active Problem Solver</span>
+              </div>
+              <h3 class="cert-title-text">HackerRank Problem Solving & Python</h3>
+              <p class="cert-desc-text">
+                Demonstrated algorithmic problem solving, time/space complexity optimization, data structures (stacks, trees, hash maps), and Python proficiency.
+              </p>
+              <div class="cert-footer-row">
+                <a href="https://hackerrank.com" target="_blank" rel="noopener noreferrer" class="cert-verify-link">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i> View Profile
+                </a>
+                <span class="badge-status-pill verified"><i class="fa-solid fa-check"></i> Rank Verified</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT & CONNECT SECTION (With Working Email & Multiple Mail Launchers) -->
+    <section class="section contact-section" id="contact">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle"><i class="fa-solid fa-paper-plane"></i> Get In Touch</span>
+          <h2 class="section-title">Let's <span class="gradient-text">Collaborate</span></h2>
+          <p class="section-lead">Have a machine learning project, internship opportunity, or data problem? I'd love to connect.</p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-info-card glass-panel" data-tilt>
+            <h3>Direct Contact Channels</h3>
+            <p>Reach out directly by phone, email, or launch your preferred email client below.</p>
+
+            <div class="contact-methods">
+              <div class="contact-method-item">
+                <div class="method-icon"><i class="fa-solid fa-envelope"></i></div>
+                <div class="method-text">
+                  <span class="method-label">Direct Email</span>
+                  <a href="mailto:resshu2@gmail.com" class="method-val">resshu2@gmail.com</a>
+                </div>
+                <button class="copy-action-btn" data-copy="resshu2@gmail.com" title="Copy Email">
+                  <i class="fa-regular fa-copy"></i>
+                </button>
+              </div>
+
+              <div class="contact-method-item">
+                <div class="method-icon"><i class="fa-solid fa-phone"></i></div>
+                <div class="method-text">
+                  <span class="method-label">Phone / WhatsApp</span>
+                  <a href="tel:8925106998" class="method-val">+91 8925106998</a>
+                </div>
+                <button class="copy-action-btn" data-copy="8925106998" title="Copy Phone">
+                  <i class="fa-regular fa-copy"></i>
+                </button>
+              </div>
+
+              <div class="contact-method-item">
+                <div class="method-icon"><i class="fa-solid fa-location-dot"></i></div>
+                <div class="method-text">
+                  <span class="method-label">Location</span>
+                  <span class="method-val">Nagercoil, Tamil Nadu, India</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Quick Launch Email Directly -->
+            <div class="quick-email-options">
+              <span class="social-head">Quick Mail Launchers:</span>
+              <div class="mail-launcher-row">
+                <a href="mailto:resshu2@gmail.com?subject=Inquiry%20regarding%20Data%20Science%20role" class="btn btn-sm btn-outline">
+                  <i class="fa-solid fa-envelope-open-text"></i>
+                  <span>Default Mail App</span>
+                </a>
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=resshu2@gmail.com&su=Opportunity%20/%20Project%20Collaboration" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-glass">
+                  <i class="fa-brands fa-google"></i>
+                  <span>Open in Gmail</span>
+                </a>
+              </div>
+            </div>
+
+            <div class="contact-social-section">
+              <span class="social-head">Online Profiles</span>
+              <div class="social-icon-row">
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-link-btn" title="LinkedIn Profile">
+                  <i class="fa-brands fa-linkedin-in"></i>
+                  <span>LinkedIn</span>
+                </a>
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-link-btn" title="GitHub Profile">
+                  <i class="fa-brands fa-github"></i>
+                  <span>GitHub</span>
+                </a>
+                <a href="https://hackerrank.com" target="_blank" rel="noopener noreferrer" class="social-link-btn" title="HackerRank Profile">
+                  <i class="fa-brands fa-hackerrank"></i>
+                  <span>HackerRank</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Working Contact Form -->
+          <div class="contact-form-card glass-panel">
+            <form id="contact-form" class="contact-form">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="contact-name">Your Name *</label>
+                  <input type="text" id="contact-name" name="name" placeholder="John Doe" required>
+                </div>
+                <div class="form-group">
+                  <label for="contact-email">Your Email *</label>
+                  <input type="email" id="contact-email" name="email" placeholder="john@example.com" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="contact-subject">Subject *</label>
+                <input type="text" id="contact-subject" name="subject" placeholder="Project collaboration / Internship opportunity" required>
+              </div>
+
+              <div class="form-group">
+                <label for="contact-message">Message *</label>
+                <textarea id="contact-message" name="message" rows="5" placeholder="Hi Resshma, I would like to discuss..." required></textarea>
+              </div>
+
+              <div class="form-submit-row">
+                <button type="submit" class="btn btn-primary btn-block" id="form-submit-btn">
+                  <span>Send Message via Email</span>
+                  <i class="fa-solid fa-paper-plane"></i>
+                </button>
+              </div>
+
+              <!-- Real-time Mail Options Banner that appears after submission -->
+              <div id="form-status" class="form-status-msg"></div>
+
+              <div id="post-submit-options" class="post-submit-box" style="display: none;">
+                <p>Email client opened! If your desktop mail did not open automatically, choose an option below:</p>
+                <div class="post-submit-btns">
+                  <a id="btn-gmail-compose" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-glass">
+                    <i class="fa-brands fa-google"></i> Open in Gmail Web
+                  </a>
+                  <button type="button" id="btn-copy-draft" class="btn btn-sm btn-outline">
+                    <i class="fa-regular fa-copy"></i> Copy Draft Text
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-brand">
+        <span class="brand-bracket">&lt;</span>
+        <span class="brand-name">RESSHMA VP</span>
+        <span class="brand-bracket">/&gt;</span>
+        <p>Data Science & Artificial Intelligence Engineer &bull; B.Tech 2027</p>
+      </div>
+
+      <div class="footer-links">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#playground">AI Lab</a>
+        <a href="#certifications">Certificates</a>
+        <a href="resume.html" target="_blank">Resume</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <div class="footer-copyright">
+        &copy; 2026 RESSHMA VP. Designed with HTML5, Modern CSS3 & Three.js 3D.
+      </div>
+    </div>
+  </footer>
+
+  <!-- PROJECT ARCHITECTURE & DETAILS MODAL -->
+  <div class="modal-overlay" id="project-modal">
+    <div class="modal-container glass-panel" id="modal-container">
+      <button class="modal-close-btn" id="modal-close" aria-label="Close modal">&times;</button>
+      <div class="modal-body" id="modal-body">
+        <!-- Content injected dynamically via main.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- CERTIFICATE IMAGE PREVIEW MODAL -->
+  <div class="modal-overlay" id="cert-modal">
+    <div class="modal-container cert-modal-container glass-panel">
+      <button class="modal-close-btn" id="cert-modal-close" aria-label="Close certificate preview">&times;</button>
+      <div class="cert-modal-body">
+        <h3 id="cert-modal-title" style="margin-bottom: 1rem; font-family: var(--font-heading); font-size: 1.4rem;"></h3>
+        <div class="cert-modal-img-wrap">
+          <img id="cert-modal-img" src="" alt="Certificate Preview" style="width: 100%; border-radius: 0.5rem; display: block;">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- IN-PAGE RESUME PREVIEW MODAL -->
+  <div class="modal-overlay" id="resume-modal">
+    <div class="modal-container resume-modal-container glass-panel">
+      <button class="modal-close-btn" id="resume-modal-close" aria-label="Close resume preview">&times;</button>
+      <div class="resume-modal-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; padding-bottom: 0.75rem; border-bottom: 1px solid var(--border-glass);">
+        <h3 style="font-family: var(--font-heading); font-size: 1.35rem;">RESSHMA VP &mdash; Resume Preview</h3>
+        <div style="display: flex; gap: 0.75rem;">
+          <a href="resume.html" target="_blank" class="btn btn-sm btn-primary">
+            <i class="fa-solid fa-up-right-from-square"></i> Open Full Page
+          </a>
+        </div>
+      </div>
+      <div class="resume-modal-iframe-wrap">
+        <iframe src="resume.html" title="Resume Preview Frame" style="width: 100%; height: 70vh; border: none; border-radius: 0.5rem; background: #ffffff;"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION CONTAINER -->
+  <div id="toast-container" class="toast-container"></div>
+
+  <!-- SCRIPTS -->
+  <!-- Three.js (r128) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <!-- Canvas Confetti -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+
+  <!-- Custom JS Modules -->
+  <script src="js/three-scene.js"></script>
+  <script src="js/tilt.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
